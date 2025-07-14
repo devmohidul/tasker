@@ -63,13 +63,13 @@ export default function TaskLists({ tasks, onEdit, onDelete, onFav }) {
                 <td>
                   <div className="flex items-center justify-center space-x-3">
                     <button
-                      className="text-red-500"
+                      className="text-red-500 cursor-pointer"
                       onClick={() => onDelete(task.id)}
                     >
                       Delete
                     </button>
                     <button
-                      className="text-blue-500"
+                      className="cursor-pointer text-blue-500"
                       onClick={() => onEdit(task)}
                     >
                       Edit
