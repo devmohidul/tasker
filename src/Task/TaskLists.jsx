@@ -1,5 +1,5 @@
 import { FaStar } from "react-icons/fa";
-export default function TaskLists({ tasks, onEdit, onDelete }) {
+export default function TaskLists({ tasks, onEdit, onDelete, onFav }) {
   return (
     <>
       <div className="overflow-auto">
@@ -36,11 +36,13 @@ export default function TaskLists({ tasks, onEdit, onDelete }) {
                 className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2"
               >
                 <td>
-                  {task.isFavorite ? (
-                    <FaStar color="yellow" />
-                  ) : (
-                    <FaStar color="gray" />
-                  )}
+                  <button onClick={() => onFav(task.id)}>
+                    {task.isFavorite ? (
+                      <FaStar color="yellow" />
+                    ) : (
+                      <FaStar color="gray" />
+                    )}
+                  </button>
                 </td>
                 <td>{task.title}</td>
                 <td>
